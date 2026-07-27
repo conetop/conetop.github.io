@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sivapriya's Cozy Corner 🧡</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Canvas Confetti for Contact Page -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- BACKGROUND BLOBS -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header">
+    <div class="navbar-container">
+      <div class="navbar-logo" onclick="window.app.navigate('home')">
+        <div class="logo-icon-bg">
+          <span class="logo-emoji">🍊</span>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <button class="nav-link active" data-nav="home" onclick="window.app.navigate('home')">
+          <span class="nav-icon">🏡</span> <span>Home</span>
+        </button>
+        <button class="nav-link" data-nav="about" onclick="window.app.navigate('about')">
+          <span class="nav-icon">✨</span> <span>About</span>
+        </button>
+        <button class="nav-link" data-nav="education" onclick="window.app.navigate('education')">
+          <span class="nav-icon">🎓</span> <span>Education</span>
+        </button>
+        <button class="nav-link" data-nav="skills" onclick="window.app.navigate('skills')">
+          <span class="nav-icon">🌟</span> <span>Skills</span>
+        </button>
+        <button class="nav-link" data-nav="contact" onclick="window.app.navigate('contact')">
+          <span class="nav-icon">🔒</span> <span>Contact</span>
+        </button>
+      </nav>
+
+      <div class="navbar-controls">
+        <button class="theme-toggle-btn" id="themeToggleBtn">
+          <i data-lucide="moon" class="theme-icon moon lucide-18"></i>
+          <i data-lucide="sun" class="theme-icon sun lucide-18"></i>
+          <span class="theme-label" id="themeLabel">Dark Theme</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="lucide-24" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu glass-card" id="mobileMenu">
+      <button class="mobile-nav-link active" data-nav-mobile="home" onclick="window.app.navigate('home')">🏡 Home</button>
+      <button class="mobile-nav-link" data-nav-mobile="about" onclick="window.app.navigate('about')">✨ About</button>
+      <button class="mobile-nav-link" data-nav-mobile="education" onclick="window.app.navigate('education')">🎓 Education</button>
+      <button class="mobile-nav-link" data-nav-mobile="skills" onclick="window.app.navigate('skills')">🌟 Skills</button>
+      <button class="mobile-nav-link" data-nav-mobile="contact" onclick="window.app.navigate('contact')">🔒 Contact</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- HOME SECTION -->
+    <div id="home" class="page-section active fade-in">
+      <section class="hero-section glass-card">
+        <div class="hero-grid">
+          <div class="hero-text-col">
+            <h1 class="hero-title cute-font">
+              Hi, I'm <span class="gradient-text">Sivapriya</span> 👋
+            </h1>
+            <p class="hero-subtitle">
+              Hi, I'm Sivapriya 🧡 — a student, dancer, ice cream lover, and someone who finds happiness in the smallest things. Welcome to my little cozy corner of the internet!
+            </p>
+            <div class="mood-ticker">
+              <div class="mood-item"><i data-lucide="smile" class="lucide-16"></i> <span>Status: Lazy for college 😶</span></div>
+              <div class="mood-item"><i data-lucide="music" class="lucide-16"></i> <span>Vibe: Rain + Deep Sleep 🌧️</span></div>
+              <div class="mood-item"><i data-lucide="coffee" class="lucide-16"></i> <span>Energy: 89% 🔋</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="affirmation-section glass-card">
+        <div class="affirmation-header">
+          <div class="affirmation-title cute-font">
+            <i data-lucide="stars" class="lucide-20 sparkle-icon"></i> Daily Cozy Affirmation
+          </div>
+          <button class="btn-outline refresh-btn" onclick="window.app.nextAffirmation()">Next Affirmation 🪄</button>
+        </div>
+        <p class="affirmation-text cute-font" id="affirmationText">
+          "You are capable of amazing things, take it one cozy step at a time ✨"
+        </p>
+      </section>
+
+      <section class="highlights-section">
+        <h2 class="section-title cute-font gradient-text">Quick Peek Inside ✨</h2>
+        <div class="highlights-grid">
+          <div class="glass-card highlight-card interactive" onclick="window.app.navigate('about')">
+            <div class="highlight-icon-bg">✨</div>
+            <h3 class="cute-font">About Me</h3>
+            <p>Discover my passions, favorite books, lofi playlists, and cute facts.</p>
+            <span class="card-link">Read bio <i data-lucide="arrow-right" class="lucide-14"></i></span>
+          </div>
+          <div class="glass-card highlight-card interactive" onclick="window.app.navigate('education')">
+            <div class="highlight-icon-bg">🎓</div>
+            <h3 class="cute-font">Education</h3>
+            <p>Check out my academic achievements, degree journey, and research interests.</p>
+            <span class="card-link">View timeline <i data-lucide="arrow-right" class="lucide-14"></i></span>
+          </div>
+          <div class="glass-card highlight-card interactive" onclick="window.app.navigate('skills')">
+            <div class="highlight-icon-bg">🌟</div>
+            <h3 class="cute-font">Skills & Powers</h3>
+            <p>From tech abilities to cozy everyday superpowers like baking & playlisting.</p>
+            <span class="card-link">Explore skills <i data-lucide="arrow-right" class="lucide-14"></i></span>
+          </div>
+          <div class="glass-card highlight-card interactive" onclick="window.app.navigate('contact')">
+            <div class="highlight-icon-bg">🔒</div>
+            <h3 class="cute-font">Contact</h3>
+            <p>Protected contact gatekeeper & interactive sticky note corkboard.</p>
+            <span class="card-link">Unlock & note <i data-lucide="shield-check" class="lucide-14"></i></span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div id="about" class="page-section fade-in">
+      <section class="glass-card bio-section">
+        <div class="bio-header">
+          <span class="badge"><i data-lucide="sparkles" class="lucide-14"></i> Story & Persona</span>
+          <h1 class="cute-font gradient-text">About Me ✨</h1>
+        </div>
+        <div class="bio-content">
+          <p>Hey! I'm Sivapriya — a student who's just trying to figure life out, one nap at a time 😄. Dancing is more than a hobby for me — it's life itself. Whenever I step onto a stage, everything else just fades away. Classical dance especially has a special place in my heart.</p>
+          <p>Family always comes first for me, no matter what. I'm a very sensitive person — I feel things deeply, and I genuinely care about the people around me. I'm also a bit of a scaredy-cat (horror movies are a hard no 😅), but I make up for it with a big heart.</p>
+          <p>I believe every mistake is just a lesson wearing a disguise, so I keep learning and growing every day. Oh, and if there's one thing you absolutely need to know about me — I am obsessed with ice cream. Like, sooo much. It solves everything 🍦</p>
+        </div>
+      </section>
+
+      <section class="favorites-section">
+        <h2 class="section-title cute-font gradient-text">My Favourite Things 🧸</h2>
+        <div class="favorites-grid">
+          <div class="glass-card fav-card"><div class="fav-emoji">🍦</div><h3 class="cute-font">Ice Cream</h3><p>My one true love — any flavour, any time, any weather 🍦</p></div>
+          <div class="glass-card fav-card"><div class="fav-emoji">😴</div><h3 class="cute-font">Sleeping</h3><p>A full-time hobby. Naps are not optional, they are required 😴</p></div>
+          <div class="glass-card fav-card"><div class="fav-emoji">💃</div><h3 class="cute-font">Dancing</h3><p>Classical dance especially — it's not just a hobby, it's my soul speaking 💃</p></div>
+          <div class="glass-card fav-card"><div class="fav-emoji">🐶</div><h3 class="cute-font">Dogs</h3><p>Especially golden retrievers — fluffy, loyal, and just the best beings 🐕</p></div>
+          <div class="glass-card fav-card"><div class="fav-emoji">🎵</div><h3 class="cute-font">Listening to Music</h3><p>Mostly romantic songs — they just hit different 🎵</p></div>
+        </div>
+      </section>
+
+      <section class="glass-card quiz-section">
+        <div class="quiz-header">
+          <i data-lucide="help-circle" class="lucide-24 sparkle-icon"></i>
+          <h2 class="cute-font">How Well Do You Know Me? 🤔</h2>
+        </div>
+        <div class="quiz-questions" id="quizContainer">
+          <!-- Quiz injected via JS -->
+        </div>
+        <div class="quiz-action">
+          <button class="btn-cute" onclick="window.app.checkQuizScore()">
+            <i data-lucide="check-circle" class="lucide-18"></i> Check My Score
+          </button>
+          <div class="quiz-result glass-card" id="quizResult">
+            <h3 class="cute-font gradient-text" id="quizScoreText">Your Score: 0 / 5 ✨</h3>
+            <p id="quizFeedbackText"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- EDUCATION SECTION -->
+    <div id="education" class="page-section fade-in">
+      <section class="glass-card page-header-card">
+        <span class="badge"><i data-lucide="graduation-cap" class="lucide-14"></i> Academic Journey</span>
+        <h1 class="cute-font gradient-text">Education & Milestones 🎓</h1>
+        <p class="header-desc">A record of my academic pursuits, schools, and continuous curiosity for learning.</p>
+      </section>
+
+      <section class="timeline-section">
+        <h2 class="section-title cute-font gradient-text">Academic Timeline 📜</h2>
+        <div class="timeline-list">
+          
+          <div class="timeline-item glass-card">
+            <div class="timeline-badge-row">
+              <span class="badge"><i data-lucide="calendar" class="lucide-12"></i> 2026 – 2030</span>
+              <span class="badge status-badge">In Progress 🎓</span>
+            </div>
+            <h3 class="cute-font timeline-title">Bachelor of Science – Zoology (BSc. Zoology)</h3>
+            <p class="timeline-inst">St. Thomas College, Thrissur</p>
+            <p class="timeline-desc">Currently pursuing my undergraduate degree in Zoology, diving deep into wildlife, ecology, cell biology, and life sciences.</p>
+            <div class="achievements-box">
+              <h4 class="cute-font achievements-header"><i data-lucide="award" class="lucide-16"></i> Key Details:</h4>
+              <ul class="achievements-list">
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Pursuing BSc. Zoology</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Passionate about Biology & Life Sciences</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> St. Thomas College, Thrissur</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item glass-card">
+            <div class="timeline-badge-row">
+              <span class="badge"><i data-lucide="calendar" class="lucide-12"></i> 2023 – 2025</span>
+              <span class="badge status-badge">Completed ✅</span>
+            </div>
+            <h3 class="cute-font timeline-title">Higher Secondary (Plus One & Plus Two) – Bio Science</h3>
+            <p class="timeline-inst">Vivekodayam Boys Higher Secondary School, Thrissur</p>
+            <p class="timeline-desc">Completed my Higher Secondary education in the Bio Science stream, building a strong foundation in Biology, Chemistry, and allied sciences.</p>
+            <div class="achievements-box">
+              <h4 class="cute-font achievements-header"><i data-lucide="award" class="lucide-16"></i> Key Details:</h4>
+              <ul class="achievements-list">
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Bio Science Stream</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Strong foundation in Biology & Chemistry</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Graduated 2025</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item glass-card">
+            <div class="timeline-badge-row">
+              <span class="badge"><i data-lucide="calendar" class="lucide-12"></i> Until 2023</span>
+              <span class="badge status-badge">Completed 📜</span>
+            </div>
+            <h3 class="cute-font timeline-title">10th Standard (SSLC)</h3>
+            <p class="timeline-inst">Sacred Hearts School, Thrissur</p>
+            <p class="timeline-desc">Completed my secondary schooling at Sacred Hearts, Thrissur, building strong academic roots and a love for learning.</p>
+            <div class="achievements-box">
+              <h4 class="cute-font achievements-header"><i data-lucide="award" class="lucide-16"></i> Key Details:</h4>
+              <ul class="achievements-list">
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Completed 10th Standard (SSLC)</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Sacred Hearts, Thrissur</li>
+                <li><i data-lucide="check-circle-2" class="lucide-14 check-icon"></i> Graduated 2023</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <div id="skills" class="page-section fade-in">
+      <section class="glass-card page-header-card">
+        <span class="badge"><i data-lucide="sparkles" class="lucide-14"></i> Talents & Abilities</span>
+        <h1 class="cute-font gradient-text">Skills & Superpowers 🌟</h1>
+        <p class="header-desc">A blend of academic strengths, creative passions, and cozy everyday talents!</p>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all" onclick="window.app.filterSkills('all')">All Skills (8)</button>
+          <button class="filter-btn" data-filter="academic" onclick="window.app.filterSkills('academic')">🎓 Academic</button>
+          <button class="filter-btn" data-filter="creative" onclick="window.app.filterSkills('creative')">🎨 Creative</button>
+          <button class="filter-btn" data-filter="everyday" onclick="window.app.filterSkills('everyday')">🧸 Everyday</button>
+        </div>
+      </section>
+      <section class="skills-grid-section">
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skills injected via JS -->
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div id="contact" class="page-section fade-in">
+      <section class="glass-card security-banner">
+        <div class="banner-icon-col">
+          <div class="mochi-avatar pulse-animation">
+            <span class="mochi-emoji">🐱 Security Mochi</span>
+          </div>
+        </div>
+        <div class="banner-text-col">
+          <span class="badge"><i data-lucide="shield-check" class="lucide-14"></i> Protected Cozy Zone</span>
+          <h1 class="cute-font gradient-text">Contact & Privacy Gatekeeper 🔒</h1>
+          <p class="banner-desc">Direct personal details (Email, Socials, Phone) are kept private to protect myself from unwanted messages. You can unlock my secret card using the secret passcode!</p>
+        </div>
+      </section>
+
+      <section class="glass-card gatekeeper-card">
+        <div class="gatekeeper-header">
+          <i data-lucide="lock" class="lucide-28 lock-icon" id="gatekeeperIcon"></i>
+          <h2 class="cute-font" id="gatekeeperTitle">Are You The Chosen One? 🔑</h2>
+        </div>
+
+        <form class="unlock-form" id="unlockForm" onsubmit="window.app.handleUnlock(event)">
+          <p class="unlock-hint">Enter the secret passcode to reveal my private contact info.</p>
+          <div class="input-group">
+            <input type="password" class="cute-input" id="passcodeInput" placeholder="Enter secret passcode..." />
+            <button type="submit" class="btn-cute">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4" />
+                <path d="m21 2-9.6 9.6" />
+                <circle cx="7.5" cy="16.5" r="5.5" />
+              </svg> Unlock Details
+            </button>
+          </div>
+          <div class="error-pill fade-in" id="errorPill">
+            <i data-lucide="alert-circle" class="lucide-16"></i> <span id="errorMsgText"></span>
+          </div>
+        </form>
+
+        <div class="unlocked-details fade-in" id="unlockedDetails">
+          <p class="unlocked-msg">✨ Welcome! Here are my private handles reserved for friends and family:</p>
+          <div class="handles-grid">
+            <div class="handle-card">
+              <span class="handle-icon">📸</span>
+              <div class="handle-info">
+                <span class="handle-label">Instagram (Private)</span>
+                <span class="handle-value cute-font">@siva.priyaah_</span>
+              </div>
+            </div>
+            <div class="handle-card">
+              <span class="handle-icon">✉️</span>
+              <div class="handle-info">
+                <span class="handle-label">Personal Email</span>
+                <span class="handle-value cute-font">sivapriyapsuresh@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-container">
+    <div class="footer-content glass-card">
+      <div class="footer-badge">✨ Made with the essense of love</div>
+      <p class="footer-copy">
+        © <span id="currentYear"></span> · Made with <i data-lucide="heart" class="lucide-14 heart-icon"></i> and warm smiles 😊
+      </p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
