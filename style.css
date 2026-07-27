@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5, h6, .cute-font {
 .affirmation-header { display: flex; justify-content: space-between; align-items: center; }
 .affirmation-title { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; color: var(--accent-primary); }
 .refresh-btn { font-size: 0.8rem; padding: 6px 14px; }
-.affirmation-text { font-size: 1.15rem; color: var(--text-primary); font-style: italic; font-family: 'Nunito', sans-serif; font-weight: 400; }
+.affirmation-text { font-size: 1.15rem; color: var(--text-primary); font-style: italic; font-family: 'Pacifico', sans-serif; }
 .highlights-section { display: flex; flex-direction: column; gap: 20px; }
 .section-title { font-size: 1.8rem; text-align: center; }
 .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
