@@ -69,6 +69,14 @@ window.app = {
     // Set Year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+    // Load Theme from localStorage
+    const savedTheme = localStorage.getItem('cozyTheme');
+    if (savedTheme) {
+      this.currentTheme = savedTheme;
+      document.documentElement.setAttribute('data-theme', this.currentTheme);
+      document.getElementById('themeLabel').textContent = this.currentTheme === 'light' ? 'Dark Theme' : 'Light Theme';
+    }
+
     // Init Theme
     document.getElementById('themeToggleBtn').addEventListener('click', () => this.toggleTheme());
     
@@ -123,6 +131,7 @@ window.app = {
     this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.currentTheme);
     document.getElementById('themeLabel').textContent = this.currentTheme === 'light' ? 'Dark Theme' : 'Light Theme';
+    localStorage.setItem('cozyTheme', this.currentTheme);
   },
 
   nextAffirmation() {
